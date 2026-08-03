@@ -1,0 +1,22 @@
+{
+  "project_id": "async_fifo_demo",
+  "module_name": "async_fifo",
+  "parameters": {"DATA_WIDTH": 8, "ADDR_WIDTH": 4},
+  "clocks": ["wr_clk", "rd_clk"],
+  "resets": ["wr_rst_n", "rd_rst_n"],
+  "requirements": [
+    {"id": "FIFO_REQ_001", "text": "Reset clears both local pointers and deasserts full while asserting empty."},
+    {"id": "FIFO_REQ_002", "text": "An accepted write stores one data word and advances the write pointer exactly once."},
+    {"id": "FIFO_REQ_003", "text": "A write request while full must not modify memory or advance the write pointer."},
+    {"id": "FIFO_REQ_004", "text": "An accepted read returns the oldest unread word and advances the read pointer exactly once."},
+    {"id": "FIFO_REQ_005", "text": "A read request while empty must not advance the read pointer."},
+    {"id": "FIFO_REQ_006", "text": "Pointers crossing clock domains use Gray coding and two-stage synchronization."},
+    {"id": "FIFO_REQ_007", "text": "The design preserves ordering across independent write and read clocks."},
+    {"id": "FIFO_REQ_008", "text": "Full and empty flags are generated in their local clock domains."}
+  ],
+  "acceptance": {
+    "lint_errors": 0,
+    "simulation_failures": 0,
+    "mutation_score_minimum": 0.8
+  }
+}

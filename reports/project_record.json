@@ -1,0 +1,25 @@
+{
+  "project_id": "async_fifo_demo",
+  "state": "VERIFICATION_READY",
+  "specification_path": "/mnt/data/agentic_rtl_platform/specs/async_fifo.json",
+  "rtl_path": "/mnt/data/agentic_rtl_platform/workspaces/async_fifo/generated_rtl/async_fifo.sv",
+  "verification_path": "/mnt/data/agentic_rtl_platform/workspaces/async_fifo/verification",
+  "revision": 0,
+  "open_issues": [],
+  "evidence": {
+    "rtl_review": {
+      "status": "PASS",
+      "issues": [],
+      "checks": {
+        "module_name": true,
+        "gray_conversion": true,
+        "two_stage_sync": true,
+        "write_guard": true,
+        "read_guard": true,
+        "local_full_register": true,
+        "local_empty_register": true
+      }
+    }
+  },
+  "updated_at": "2026-07-31T22:28:47.988629Z"
+}

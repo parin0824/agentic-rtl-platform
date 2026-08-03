@@ -1,0 +1,14 @@
+[options]
+mode bmc
+depth 40
+
+[engines]
+smtbmc z3
+
+[script]
+read -formal -sv ../rtl/async_fifo/async_fifo.sv async_fifo_formal.sv
+prep -top async_fifo_formal
+
+[files]
+../rtl/async_fifo/async_fifo.sv
+async_fifo_formal.sv

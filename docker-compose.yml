@@ -1,0 +1,7 @@
+services:
+  agentic-rtl:
+    build: .
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    command: pytest -q
