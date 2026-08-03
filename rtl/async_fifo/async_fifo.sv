@@ -32,8 +32,11 @@ module async_fifo #(
   logic full_next;
   logic empty_next;
 
-  function automatic logic [PTR_WIDTH-1:0] bin2gray(input logic [PTR_WIDTH-1:0] value);
-    return (value >> 1) ^ value;
+  function [PTR_WIDTH-1:0] bin2gray;
+    input [PTR_WIDTH-1:0] value;
+    begin
+      bin2gray = (value >> 1) ^ value;
+    end
   endfunction
 
   assign wr_bin_next = wr_bin + ((wr_en && !full) ? 1'b1 : 1'b0);
